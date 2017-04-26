@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ClubApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/application.css.scss">
+
+</head>
+
+<% if logged_in? %>
+
+
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand jawnbook" href="/home">ClubApp</a>
+   </div>
+
+
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+        <li class="navbar divider-vertical"></li>
+        <li><a class="logout" data-method="delete" href="/logout">Logout</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+        <li class="navbar divider-vertical"></li>
+        <li><a class="account" href= <%='/users/' + session[:user_id].to_s %>>My Account</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+        <li class="navbar divider-vertical"></li>
+        <li><a class="members" href="/users">Members</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+        <li class="navbar divider-vertical"></li>
+        <li><a class="calendar" href="/calendar">Calendar</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+        <li class="navbar divider-vertical"></li>
+        <li><a class="announcements" href=<%= announcements_path %>>Announcements</a></li>
+    </ul>
+
+
+
+</div>
+
+
+
+<% end %>
+
+
+
+
+<body class="background">
+
+<%= yield %>
+
+
+
+</body>
+</html>

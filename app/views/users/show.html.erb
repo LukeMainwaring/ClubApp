@@ -1,0 +1,38 @@
+
+<p id="notice"><%= notice %></p>
+<style>
+p {
+  font-size: 30px;
+  margin:20;
+  padding-left: 200px;
+}
+</style>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.firstName %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.lastName %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @user.position %>
+</p>
+
+<li><a align="center" class="btn signup-button form-button" data-method="delete" href=<%='/users/' + session[:user_id].to_s %>>Delete Account</a></li>
+
+

@@ -1,0 +1,27 @@
+<div class="focus-box container-fluid">
+    <div class="row">
+        <div class="col-xs-12 title-box"><h1>ClubApp</h1></div>
+    </div>
+    <div class="row">
+        <div class="container-fluid login-box">
+           <form class="form-group" id="loginform" action='/login' accept-charset="UTF-8" method="post">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <div class="field form-group">
+                    <label for="email" class='signup-label'>Email:</label>
+                    <input type="text" placeholder="Email" name="email" id="email" class="form-control signup-field">
+                </div>
+                <div class="field form-group">
+                    <label for="username" class='signup-label'>Password:</label>
+                    <input type="password" placeholder="Password" class="form-control signup-field" name="password" id="password">
+                </div>
+
+            </form>
+
+            <button class="btn login-button form-button" form="loginform">Sign In</button>
+            
+            <form action="/signup" method="get" id="signupform">
+            </form>
+            <button class="btn signup-button form-button" form="signupform" >Sign Up</button>
+        </div>
+    </div>
+</div>
